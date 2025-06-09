@@ -64,7 +64,6 @@ fun AccountScreen(
                 .padding(padding)
         ) {
 
-            Image(painterResource(id = R.drawable.background_settings),contentDescription = null, modifier = Modifier.fillMaxSize(), contentScale = ContentScale.FillBounds)
 
             Column(
                 modifier = Modifier
