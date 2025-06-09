@@ -56,7 +56,6 @@ fun RegisterScreenContent(
     val scrollState = rememberScrollState()
 
     Box(modifier = Modifier
-        .verticalScroll(scrollState)
         .fillMaxSize(),
         contentAlignment = Alignment.Center)
     {
@@ -83,6 +82,7 @@ fun RegisterScreenContent(
     // create column and scale it around screen
 
     Column(modifier = Modifier
+        .verticalScroll(scrollState)
         .padding(top = Dimens.SpacingXXL)
         .fillMaxWidth()
         ,

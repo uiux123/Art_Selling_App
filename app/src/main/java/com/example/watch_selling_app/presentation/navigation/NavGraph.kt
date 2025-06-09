@@ -142,6 +142,9 @@ fun AppNavGraph(navController: NavHostController) {
                 },
                 onBackClick = {
                     navController.popBackStack()
+                },
+                onLogoutClick =  {
+
                 }
             )
         }

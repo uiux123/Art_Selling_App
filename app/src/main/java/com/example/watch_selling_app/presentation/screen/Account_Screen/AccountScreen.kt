@@ -3,7 +3,9 @@ package com.example.watch_selling_app.presentation.screen.Account_Screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.*
@@ -31,7 +33,8 @@ fun AccountScreen(
     navItems: List<BottomNavItem>,
     selectedItem: BottomNavItem,
     onItemSelected: (BottomNavItem) -> Unit,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onLogoutClick:() -> Unit
 ) {
     val isDark = isSystemInDarkTheme()
     val context = LocalContext.current
@@ -42,6 +45,8 @@ fun AccountScreen(
     val backgroundRes = if (isDark) content.backgroundResDarkModeId else content.backgroundResLightModeId
     val backgroundDesc = if (isDark) content.backgroundDesc else content.backgroundDesc
     val viewProfileImage = if (isDark) content.viewProfileButtonDark else content.viewProfileButtonLight
+
+    val scrollState = rememberScrollState()
 
     Scaffold(
         bottomBar = {
@@ -63,6 +68,7 @@ fun AccountScreen(
 
             Column(
                 modifier = Modifier
+                    .verticalScroll(scrollState)
                     .fillMaxSize()
                     .padding(Dimens.SpacingM),
                 verticalArrangement = Arrangement.spacedBy(Dimens.SpacingM)
@@ -153,7 +159,9 @@ fun AccountScreen(
                 supportItems.forEach { item ->
                     SectionCard(
                         item = item,
-                        onClick = {}
+                        onClick = {
+
+                        }
                     )
                 }
             }

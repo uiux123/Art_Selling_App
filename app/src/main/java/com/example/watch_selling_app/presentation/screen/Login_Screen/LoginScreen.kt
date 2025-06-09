@@ -65,7 +65,6 @@ fun LoginScreenContent(
     // put top image inside a Box
     Box(
         modifier = Modifier
-            .verticalScroll(scrollState)
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     )
@@ -88,6 +87,7 @@ fun LoginScreenContent(
 
         Column(
             modifier = modifier
+                .verticalScroll(scrollState)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment
                 .CenterHorizontally
