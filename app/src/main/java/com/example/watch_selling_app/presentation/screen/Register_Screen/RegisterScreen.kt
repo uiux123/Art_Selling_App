@@ -14,6 +14,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,8 +53,10 @@ fun RegisterScreenContent(
     onLoginHereClick: () -> Unit
 )
 {
+    val scrollState = rememberScrollState()
 
     Box(modifier = Modifier
+        .verticalScroll(scrollState)
         .fillMaxSize(),
         contentAlignment = Alignment.Center)
     {
@@ -73,29 +77,6 @@ fun RegisterScreenContent(
             descriptionKey = content.backButtonIconDescriptionKey,
             onClick = onBackClick
         )
-
-        // keep title and subtitle inside a column
-        Column(modifier = modifier
-            .align(Alignment.Center),
-            horizontalAlignment = Alignment.CenterHorizontally)
-        {
-            // main title
-
-            Text(text = getSafeString(content.titleKey),
-                style = MaterialTheme.typography.displayMedium,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-
-            Spacer(modifier = Modifier.height(Dimens.SpacingM))
-
-            ///sub title
-
-            Text(text = getSafeString(content.subtitleKey),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-
-        }
 
 
     }
