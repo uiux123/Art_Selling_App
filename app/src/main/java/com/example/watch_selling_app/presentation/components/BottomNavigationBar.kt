@@ -56,11 +56,11 @@ fun BottomNavigationBar(
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = LocalCustomColors.current.luxuryGold,
-                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    selectedIconColor = MaterialTheme.colorScheme.background,
+                    unselectedIconColor = MaterialTheme.colorScheme.onBackground,
                     selectedTextColor = LocalCustomColors.current.luxuryGold,
                     unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    indicatorColor = MaterialTheme.colorScheme.surfaceContainerLow
+                    indicatorColor = MaterialTheme.colorScheme.onBackground
                 )
             )
         }
